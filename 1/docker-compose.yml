@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+  web:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - nodeapp 
+  nodeapp:
+    build: ./node
+    ports:
+      - "3000:3000"
